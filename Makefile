@@ -6,7 +6,7 @@
 #    By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/19 17:07:50 by alycgaut          #+#    #+#              #
-#    Updated: 2022/11/19 17:57:04 by alycgaut         ###   ########.fr        #
+#    Updated: 2022/11/19 18:05:23 by alycgaut         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ clean :
 	$(MAKE) clean -C $(LIBFT)
 	$(RM) $(OBJS)
 
-fclean : $(CLEAN)
+fclean : clean
 	$(MAKE) fclean -C $(LIBFT)
 	$(RM) $(NAME)
 
