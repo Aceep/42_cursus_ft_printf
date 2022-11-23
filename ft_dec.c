@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_dec.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 17:17:33 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/11/23 19:35:14 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/11/23 19:15:50 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/11/23 19:35:05 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-# include "libft/libft.h"
+int	put_nbr(unsigned int n)
+{
+	ft_putnbr(n);
+	return (ft_nbrlen(n));
+}
 
-# include <stdio.h>
+int	put_char(unsigned int c)
+{
+	ft_putchar(c);
+	return (1);
+}
 
-int	ft_printf(const char *str, ...);
-int	put_nbr(unsigned int n);
-int	put_char(unsigned int c);
-int	put_str(char *s);
-
-#endif
+int	put_str(char *s)
+{
+	ft_putstr(s);
+	return (ft_strlen(s));
+}

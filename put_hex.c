@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   put_hex.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 17:17:33 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/11/23 19:35:14 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/11/23 20:01:13 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/11/23 20:15:41 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-# include "libft/libft.h"
+int	put_ptr(unsigned long long n)
+{
+	int	written;
 
-# include <stdio.h>
+	written = 0;
+	written += ft_printf("0x");
+	while (n > 16)
+	{
+		int idx = n / 16;
+		n = n % 16;
+	}
+	return (n);
+}
 
-int	ft_printf(const char *str, ...);
-int	put_nbr(unsigned int n);
-int	put_char(unsigned int c);
-int	put_str(char *s);
-
-#endif
+int	main(void)
+{
+	ft_printf("%d", put_ptr(32));
+	return (0);
+}
