@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstnw.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:47:44 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/11/24 17:22:27 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/11/24 17:51:46 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-t_list	*ft_lstnew(void *content)
+t_arg	*ft_lstnw(char t, void *content, t_arg **text)
 {
-	t_list	*new;
+	t_arg	*new;
 
-	new = (t_list *)malloc(sizeof(t_list));
+	new = (t_arg *)malloc(sizeof(t_arg));
 	if (!(new))
 		return (NULL);
-	new->content = content;
+	new->type = t;
+	new->arg = content;
 	new->next = NULL;
+	if (*text != NULL)
+		new->previous = *text;
 	return (new);
 }
 
 /*int	main(void)
 {
 	char *data = "I'm a data !";
-	ft_lstnew(data);
+	t_arg *new = ft_lstnw('s', data);
+	printf("%c = type, %s = arg content\n", new->type, (char *)new->arg);
 }*/

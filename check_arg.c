@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   check_arg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 11:43:43 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/11/24 17:13:46 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/11/24 18:22:06 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/11/24 18:56:15 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+int	check_arg(const char *str, t_arg **text, va_list arg_info, int written)
 {
-	t_list	*position;
-
-	if (!lst)
-		return ;
-	position = (*lst)->next;
-	while (position)
-	{
-		position = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = position;
-	}
+	if (*str == 'd' || *str == 'i')
+		ft_lstnw('d', (unsigned int)va_arg(arg_info, unsigned int));
+	return (0);
 }

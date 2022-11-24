@@ -6,12 +6,13 @@
 #    By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/19 17:07:50 by alycgaut          #+#    #+#              #
-#    Updated: 2022/11/23 19:23:44 by alycgaut         ###   ########.fr        #
+#    Updated: 2022/11/24 17:57:07 by alycgaut         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = ft_printf.c \
        ft_dec.c \
+       ft_lstnw.c \
 
 OBJS = $(SRCS:.c=.o)
 
