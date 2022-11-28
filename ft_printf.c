@@ -6,13 +6,13 @@
 /*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 17:16:33 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/11/24 18:58:08 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/11/28 12:38:03 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	stock_str(const char *str, t_arg **text)
+int	stock_str(const char *str)
 {
 	int	i;
 	char	*s1;
@@ -21,7 +21,7 @@ int	stock_str(const char *str, t_arg **text)
 	while (str[i] != '%' && str[i])
 		i ++;
 	s1  = ft_substr(str, 0, i);
-	*text = ft_lstnw('s', (char *)s1, &(*text));
+	put_str(s1);
 	return (ft_strlen(s1));
 }
 
@@ -36,9 +36,9 @@ int	ft_printf(const char *str, ...)
 	while (*str != '\0')
 	{
 		if (*str != '%')
-			written += stock_str(str, &text); 
-		else 
-			check_arg(str, &text, arg_info, written);
+			written += stock_str(str);
+		else
+			check_arg(str, *text, arg_info);
 		str += written;
 	}
 	//printf("%u", (unsigned int)text->arg);

@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_arg.c                                        :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/24 18:22:06 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/11/28 12:14:27 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/11/19 17:16:33 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/11/28 12:59:41 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	check_arg(const char *str, t_arg **text, va_list arg_info)
+int	ft_printf(const char *str, ...)
 {
-	if (*str == 'd' || *str == 'i')
+	va_list	arg_info;
+	va_start(arg_info, str);
+	size_t	written;
+
+	written = 0;
+	while (*(str) != '\0')
 	{
-		//ft_lstnw('d', va_arg(arg_info, unsigned int), text);
-		//put_nbr((unsigned int)va_arg(va_info, unsigned int));
-		return (ft_nbrlen(put_nbr((unsigned int)va_arg(va_info, unsigned int))));
+		if (*str != '%')
+		{
+			ft_putchar(*str);
+			written ++;
+		}
+		else
+		{
+			str ++;
+			check_arg(&written, arg_info, str);
+		}
+		str ++;
 	}
-	return (0);
+	return (written);
 }

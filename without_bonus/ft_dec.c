@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_arg.c                                        :+:      :+:    :+:   */
+/*   ft_dec.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/24 18:22:06 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/11/28 12:14:27 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/11/23 19:15:50 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/11/28 12:45:22 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	check_arg(const char *str, t_arg **text, va_list arg_info)
+int	put_nbr(unsigned int n)
 {
-	if (*str == 'd' || *str == 'i')
-	{
-		//ft_lstnw('d', va_arg(arg_info, unsigned int), text);
-		//put_nbr((unsigned int)va_arg(va_info, unsigned int));
-		return (ft_nbrlen(put_nbr((unsigned int)va_arg(va_info, unsigned int))));
-	}
-	return (0);
+	ft_putnbr(n);
+	return (ft_nbrlen(n));
+}
+
+int	put_char(unsigned int c)
+{
+	ft_putchar(c);
+	return (1);
+}
+
+int	put_str(char *s)
+{
+	ft_putstr(s);
+	return (ft_strlen(s));
 }

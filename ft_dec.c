@@ -6,7 +6,7 @@
 /*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 19:15:50 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/11/23 19:35:05 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/11/28 11:40:20 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ int	put_char(unsigned int c)
 	return (1);
 }
 
-int	put_str(char *s)
+void	put_str(char *s)
 {
 	ft_putstr(s);
-	return (ft_strlen(s));
 }
