@@ -14,7 +14,7 @@
 
 void	check_arg(size_t *written, va_list arg_info, const char *str)
 {
-	if (*str == 'd' || *str == 'i')
+	                if (*str == 'd' || *str == 'i')
                                *written += put_nbr((unsigned int)va_arg(arg_info, unsigned int));
                         else if (*str == 'c')
                                 *written += put_char((int) va_arg(arg_info, int));
