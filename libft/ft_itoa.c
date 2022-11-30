@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:43:13 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/11/10 14:42:36 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/11/30 17:48:48 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ char	*ft_itoa(int n)
 int	main(void)
 {
 	int n = -45684;
-	ft_itoavi (n);
+	ft_itoa (n);
 	return (0);
 }*/

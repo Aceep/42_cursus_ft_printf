@@ -45,7 +45,6 @@ SRCS_BONUS =  ft_lstnew.c \
 	       ft_lstiter.c \
 	       ft_lstmap.c \
 	       ft_putstr_bonus.c \
-	       ft_putnbr_bonus.c \
 	       ft_tolowercase_bonus.c \
 	       ft_touppercase_bonus.c \
 	       ft_nbrlen_bonus.c \
@@ -53,6 +52,7 @@ SRCS_BONUS =  ft_lstnew.c \
 	       ft_putchar_bonus.c \
 	       ft_strcmp_bonus.c \
               ft_memccpy_bonus.c \
+              ft_itoa_base.c \
 
 OBJS = $(SRCS:.c=.o)
 

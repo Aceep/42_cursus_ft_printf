@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_format_pointer.c                                :+:      :+:    :+:   */
+/*   ft_format_hexa.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/30 13:19:05 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/11/30 13:23:40 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/11/30 18:04:56 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/11/30 18:04:57 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	put_ptr(void *ptr_add)
+int	put_hexa(int hex, char c)
 {
 	int				i;
-	long long		add;
+	long long		hexa;
 	char			*s;
 
-	add = (long long) ptr_add;
-	i = put_str("0x");
-	s = ft_itoa_base(add, "0123456789abcdef");
-	i += ft_strlen(s);
+	hexa = (long long) hex;
+	s = ft_itoa_base(hexa, "0123456789abcdef");
+	i = ft_strlen(s);
+	if (c == 'X')
+		ft_touppercase(s);
 	return (ft_putstr(s), free(s), i);
 }

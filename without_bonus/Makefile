@@ -6,14 +6,16 @@
 #    By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/19 17:07:50 by alycgaut          #+#    #+#              #
-#    Updated: 2022/11/28 13:29:33 by alycgaut         ###   ########.fr        #
+#    Updated: 2022/11/30 18:16:37 by alycgaut         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = ft_printf.c \
-       ft_dec.c \
+       ft_put.c \
        check_arg.c \
 	   ft_format_pointer.c \
+	   ft_format_hexa.c \
+	   read_arg.c
 
 OBJS = $(SRCS:.c=.o)
 
