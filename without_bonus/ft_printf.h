@@ -22,20 +22,17 @@
 
 typedef struct s_arg
 {
-	struct s_arg	*previous;
-	char			type;
-	void			*arg;
-	struct s_arg	*next;
+	int	width;
 }t_arg;
 
 int		ft_printf(const char *str, ...);
 int		put_nbr(int n);
 int		put_char(unsigned int c);
 int		put_str(char *s);
-void	check_arg(size_t *written, va_list arg_info, const char *str);
+void	check_arg(size_t *written, va_list arg_info, const char *str, int *wid);
 int		put_ptr(void *ptr_add);
 int		put_uns(unsigned int n);
 int		put_hexa(int hex, char c);
-void	read_arg(const char *str, int *wid);
+int	read_arg(const char *str, int *wid);
 
 #endif

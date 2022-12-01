@@ -15,7 +15,8 @@ SRCS = ft_printf.c \
        check_arg.c \
 	   ft_format_pointer.c \
 	   ft_format_hexa.c \
-	   read_arg.c
+		read_arg.c \
+		ft_lstnw.c \
 
 OBJS = $(SRCS:.c=.o)
 

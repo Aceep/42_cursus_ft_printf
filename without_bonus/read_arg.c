@@ -1,14 +1,26 @@
 #include "ft_printf.h"
 
-void	read_arg(const char *str, int *wid)
+int	read_arg(const char *str, int *wid)
 {
 	int	i;
 	char	*width;
 
-	width = ft_strdup("");
 	i = 0;
-	while (str[i] != 'd' || str[i] != 'i' || str[i] != 'u' || str[i] != 's' || str[i] != '%' || str[i] != 'p' || str[i] != 'x' ||str[i] != 'X')
+	while ( str[i] >= '0' && str[i] <= '9')
 		i ++;
-	if (i != 0)
-		width = ft_substr(str, 0, i);
+	width = ft_substr(str, 0, i);
+	*wid = ft_atoi(width);
+	return (free(width), i);
 }
+/*
+int main(void)
+{
+	int wid;
+	const char *s = "je suis le %23s test";
+	wid = 0;
+	while (*s != '%')
+		s ++;
+	s ++;
+	read_arg(s, &wid);
+	printf("%d", wid);
+}*/
