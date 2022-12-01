@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 17:16:33 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/11/30 18:36:24 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/12/01 19:27:41 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,26 @@
 int	ft_printf(const char *str, ...)
 {
 	va_list		arg_info;
-	size_t		written;
-	int	wid;
+	size_t		w;
+	t_arg		*text;
 
 	va_start(arg_info, str);
-	written = 0;
+	w = 0;
 	while (*(str) != '\0')
 	{
 		if (*str != '%')
 		{
 			ft_putchar(*str);
-			written ++;
+			w ++;
 		}
 		else
 		{
 			str ++;
-			wid = 0;
-			str += read_arg(str, &wid);
-			//printf("\nwidth = %d\n", wid);
-			//written += wid;
-			check_arg(&written, arg_info, str, &wid);
+			str += ft_lstnw(str, &text);
+			if (check_arg(&w, arg_info, str, &text) != 0)
+				return (0);
 		}
 		str ++;
 	}
-	return (written);
+	return (w);
 }

@@ -1,39 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_arg.c                                         :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 19:06:53 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/12/01 19:06:59 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/12/01 19:07:07 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/12/01 19:07:13 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-int	read_arg(const char *str, t_arg **text)
+void	report_error(char *error_message)
 {
-	int		i;
-	char	*width;
-	int		wid;
-
-	i = 0;
-	while (str[i] >= '0' && str[i] <= '9')
-		i ++;
-	width = ft_substr(str, 0, i);
-	wid = ft_atoi(width);
-	(*text)->width = wid;
-	return (free(width), i);
+	ft_putstr(error_message);
 }
-/*
-int main(void)
+
+int	check_error(t_arg **text, char str)
 {
-	int wid;
-	const char *s = "je suis le %23s test";
-	wid = 0;
-	while (*s != '%')
-		s ++;
-	s ++;
-	read_arg(s, &wid);
-	printf("%d", wid);
-}*/
+	if (str == '%' && (*text)->width != 0)
+		return (report_error("Le % ne prend pas de taille de champs\n"), -1);
+	return (0);
+}

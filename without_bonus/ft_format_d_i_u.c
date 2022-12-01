@@ -1,32 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_format_pointer.c                                :+:      :+:    :+:   */
+/*   ft_put.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/30 13:19:05 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/12/01 19:02:17 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/11/23 19:15:50 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/12/01 18:46:48 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	put_ptr(void *ptr_add, t_arg **text)
+int	put_nbr(int n, t_arg **text)
 {
-	int				i;
-	long long		add;
-	char			*s;
+	char	*s;
 
-	add = (long long) ptr_add;
-	ft_putstr("0x");
-	i = 2;
-	s = ft_itoa_base(add, "0123456789abcdef");
-	i += ft_strlen(s);
+	s = ft_itoa(n);
 	if (text)
-		put_am(text, i);
+		put_am(text, ft_nbrlen(n));
+	ft_putstr(s);
+	if ((*text)->width != 0)
+		return (free(s), (*text)->width);
+	else
+		return (ft_nbrlen(n));
+}
+
+int	put_uns(unsigned int n, t_arg **text)
+{
+	char	*s;
+
+	s = ft_itoa(n);
+	if (text)
+		put_am(text, ft_nbrlen(n));
 	if ((*text)->width != 0)
 		return (ft_putstr(s), free(s), (*text)->width);
 	else
-		return (ft_putstr(s), free(s), i);
+		return (ft_putstr(s), free(s), ft_nbrlen(n));
 }

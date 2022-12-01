@@ -1,43 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put.c                                           :+:      :+:    :+:   */
+/*   ft_format_str_char.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/23 19:15:50 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/11/30 18:04:31 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/12/01 19:07:29 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/12/01 19:07:33 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "ft_printf.h"
 
-int	put_nbr(int n)
+int	put_char(unsigned int c, t_arg **text)
 {
-	char	*s;
-
-	s = ft_itoa(n);
-	ft_putstr(s);
-	return (free(s), ft_nbrlen(n));
-}
-
-int	put_char(unsigned int c)
-{
+	if (text)
+		put_am(text, 1);
 	ft_putchar(c);
-	return (1);
+	if ((*text)->width != 0)
+		return ((*text)->width);
+	else
+		return (1);
 }
 
-int	put_str(char *s)
+int	put_str(char *s, t_arg **text)
 {
+	if (text)
+		put_am(text, ft_strlen(s));
 	ft_putstr(s);
-	return (ft_strlen(s));
-}
-
-int	put_uns(unsigned int n)
-{
-	char	*s;
-
-	s = ft_itoa(n);
-	ft_putstr(s);
-	return (free(s), ft_nbrlen(n));
+	if ((*text)->width != 0)
+		return ((*text)->width);
+	else
+		return (ft_strlen(s));
 }
