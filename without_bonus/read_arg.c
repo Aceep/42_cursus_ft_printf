@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-int	read_arg(const char *str, t_arg **text)
+int	read_arg_width(const char *str, t_arg **text)
 {
 	int		i;
 	char	*width;
@@ -24,6 +24,21 @@ int	read_arg(const char *str, t_arg **text)
 	wid = ft_atoi(width);
 	(*text)->width = wid;
 	return (free(width), i);
+}
+
+int	read_arg_prec(const char *str, t_arg **text)
+{
+	int	i;
+	char	*precision;
+	int		prec;
+
+	i = 0;
+	while (str[i] >= '0' && str[i] <= '9')
+		i ++;
+	precision = ft_substr(str, 0, i);
+	prec = ft_atoi(precision);
+	(*text)->precision = prec;
+	return (free(precision), i);
 }
 /*
 int main(void)

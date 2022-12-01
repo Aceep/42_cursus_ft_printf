@@ -14,10 +14,16 @@
 
 int	ft_lstnw(const char *str, t_arg **text)
 {
+	int	arg_len;
+
+	arg_len = 0;
 	*text = (t_arg *)malloc(sizeof(t_arg));
 	if (!(text))
 		return (0);
-	return (read_arg(str, text));
+	arg_len += read_arg_width(str, text); 
+	if (*(str + arg_len) == '.')
+		arg_len += read_arg_prec((str + arg_len + 1), text) + 1;
+	return (arg_len);
 }
 
 // int	main(void)

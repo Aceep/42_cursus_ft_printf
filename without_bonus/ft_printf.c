@@ -32,7 +32,8 @@ int	ft_printf(const char *str, ...)
 			str ++;
 			str += ft_lstnw(str, &text);
 			if (check_arg(&w, arg_info, str, &text) != 0)
-				return (0);
+				return (free(text), 0);
+			free(text);
 		}
 		str ++;
 	}

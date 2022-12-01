@@ -23,6 +23,7 @@
 typedef struct s_arg
 {
 	size_t	width;
+	size_t	precision;
 }t_arg;
 
 int		ft_printf(const char *str, ...);
@@ -35,7 +36,8 @@ int		put_ptr(void *ptr_add, t_arg **text);
 int		put_uns(unsigned int n, t_arg **text);
 int		put_hexa(int hex, char c, t_arg **text);
 /*struct*/
-int		read_arg(const char *str, t_arg **text);
+int	read_arg_prec(const char *str, t_arg **text);
+int		read_arg_width(const char *str, t_arg **text);
 int		ft_lstnw(const char *str, t_arg **text);
 /*use struct*/
 void	put_am(t_arg **text, size_t written);

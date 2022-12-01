@@ -23,7 +23,7 @@ int	put_nbr(int n, t_arg **text)
 	if ((*text)->width != 0)
 		return (free(s), (*text)->width);
 	else
-		return (ft_nbrlen(n));
+		return (free(s), ft_nbrlen(n));
 }
 
 int	put_uns(unsigned int n, t_arg **text)
