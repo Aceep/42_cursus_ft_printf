@@ -6,7 +6,7 @@
 #    By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/19 17:07:50 by alycgaut          #+#    #+#              #
-#    Updated: 2022/12/01 18:57:14 by alycgaut         ###   ########.fr        #
+#    Updated: 2022/12/02 17:22:24 by alycgaut         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,11 +15,7 @@ SRCS = ft_printf.c \
 	   ft_format_str_char.c \
 	   ft_format_pointer.c \
 	   ft_format_hexa.c \
-	   read_arg.c \
-	   ft_lstnw.c \
        check_arg.c \
-	   error.c \
-	   struct_use.c \
 
 OBJS = $(SRCS:.c=.o)
 

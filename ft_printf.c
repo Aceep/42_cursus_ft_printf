@@ -3,44 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 17:16:33 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/11/28 12:38:03 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/12/02 15:02:04 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	stock_str(const char *str)
-{
-	int	i;
-	char	*s1;
-
-	i = 0;
-	while (str[i] != '%' && str[i])
-		i ++;
-	s1  = ft_substr(str, 0, i);
-	put_str(s1);
-	return (ft_strlen(s1));
-}
-
 int	ft_printf(const char *str, ...)
 {
-	va_list	arg_info;
-	va_start(arg_info, str);
-	size_t	written;
-	t_arg	*text;
+	va_list		arg_info;
+	size_t		w;
+	t_arg		*text;
 
-	written = 0;
-	while (*str != '\0')
+	va_start(arg_info, str);
+	w = 0;
+	while (*(str) != '\0')
 	{
 		if (*str != '%')
-			written += stock_str(str);
+		{
+			ft_putchar(*str);
+			w ++;
+		}
 		else
-			check_arg(str, *text, arg_info);
-		str += written;
+		{
+			str ++;
+			str += ft_lstnw(str, &text);
+			if (check_arg(&w, arg_info, str, &text) != 0)
+				return (free(text), 0);
+			free(text);
+		}
+		str ++;
 	}
-	//printf("%u", (unsigned int)text->arg);
-	return (written);
+	return (w);
 }

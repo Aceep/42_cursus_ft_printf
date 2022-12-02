@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   read_arg.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 19:06:53 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/12/01 19:06:59 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/12/02 14:56:29 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "ft_printf.h"
 
+#include "ft_printf.h"
 int	read_arg_width(const char *str, t_arg **text)
 {
 	int		i;
@@ -18,6 +18,7 @@ int	read_arg_width(const char *str, t_arg **text)
 	int		wid;
 
 	i = 0;
+	printf("here");
 	while (str[i] >= '0' && str[i] <= '9')
 		i ++;
 	width = ft_substr(str, 0, i);
@@ -38,6 +39,7 @@ int	read_arg_prec(const char *str, t_arg **text)
 	precision = ft_substr(str, 0, i);
 	prec = ft_atoi(precision);
 	(*text)->precision = prec;
+	// printf("%ld = prec \n", (*text)->precision);
 	return (free(precision), i);
 }
 /*

@@ -3,23 +3,29 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/19 17:07:50 by alycgaut          #+#    #+#              #
-#    Updated: 2022/11/28 11:52:53 by alycgaut         ###   ########.fr        #
+#    Updated: 2022/12/02 15:56:13 by alycgaut         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = ft_printf.c \
-       ft_dec.c \
-       ft_lstnw.c \
-	check_arg.c \
+       ft_format_d_i_u.c \
+	   ft_format_str_char.c \
+	   ft_format_pointer.c \
+	   ft_format_hexa.c \
+	   read_arg.c \
+	   ft_lstnw.c \
+       check_arg.c \
+	   error.c \
+	   struct_use.c \
 
 OBJS = $(SRCS:.c=.o)
 
 HEADER = ft_printf.h \
 
-LIBFT_PATH = ./libft
+LIBFT_PATH = libft
 
 NAME = libftprintf.a
 
