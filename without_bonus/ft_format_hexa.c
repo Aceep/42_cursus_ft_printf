@@ -6,20 +6,21 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 18:04:56 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/12/02 16:28:11 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/12/08 19:20:06 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	put_hexa(int hex, char c)
+int	put_hexa(unsigned long long int hex, char c)
 {
-	int				i;
-	long long		hexa;
-	char			*s;
+	int						i;
+	//unsigned long long int	hexa;
+	char					*s;
 
-	hexa = (long long) hex;
-	s = ft_itoa_base(hexa, "0123456789abcdef");
+	
+	//hexa = (unsigned long long)hex;
+	s = ft_utoa_base(hex, "0123456789abcdef");
 	i = ft_strlen(s);
 	if (c == 'X')
 		ft_touppercase(s);

@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:03:27 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/11/30 13:53:29 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/12/08 19:30:21 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void(*del)(void *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_itoa_base(long long add, char *base);
+char	*ft_utoa(long long n);
+char	*ft_utoa_base(long long add, char *base);
 
 #endif

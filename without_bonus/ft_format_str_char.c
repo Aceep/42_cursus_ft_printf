@@ -6,11 +6,12 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 19:07:29 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/12/02 16:28:27 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/12/08 15:04:16 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 int	put_char(unsigned int c)
 {
 	ft_putchar(c);
@@ -19,6 +20,8 @@ int	put_char(unsigned int c)
 
 int	put_str(char *s)
 {
+	if (s == NULL)
+		return (ft_putstr("(null)"), 6);
 	ft_putstr(s);
 	return (ft_strlen(s));
 }
