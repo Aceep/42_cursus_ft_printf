@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:50:13 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/12/08 19:24:02 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:10:59 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,11 @@ int	main(void)
 	// ft_printf("len = %d\n\n", r);
 	// r = ft_printf("long max hexa =  %x\n", LONG_MAX);
 	// ft_printf("len = %d\n\n", r);
-	r = ft_printf("mix : %x %x %x %x %x %x -42 =%xT\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
-	ft_printf("len = %d\n\n", r);
+	ft_printf("mix : %x %x %x %x %x %x -42 =%x\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	// ft_printf("\n");
+	// ft_printf("mix : -42 hex = %x %d %d %u %d %d %d  -42 =%dT\n", -42, INT_MAX, INT_MIN, ULONG_MAX, 0,4682, 452,  -42);	
+	// ft_printf("LONG_MAX = %x\n\n", LONG_MAX);
+	// ft_printf("INT_MIN = %x 0 = %x  et -42 = %x\n\n",  INT_MIN, 0, -42);
 	// r = ft_printf("x = %x\n", LONG_MIN);
 	// ft_printf("len = %d\n\n", r);
 	// r = ft_printf("u = %u\n", -1);
@@ -76,20 +79,20 @@ int	main(void)
 	// r = printf("long max hexa =  %lx\n", LONG_MAX);
 	// printf("len = %d\n\n", r);
 	r = printf("mix : %x %x %lx %lx %lx %x -42 =%xT\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
-	printf("len = %d\n\n", r);
-	printf("len = %u\n\n", -42);
-	ft_printf("%u\n", -42);
+	// printf("len = %d\n\n", r);
+	// printf("len = %u\n\n", -42);
+	ft_printf("-42 tout seul = %x\n", -42);
 	// r = printf("x = %lx\n", LONG_MIN);
 	// printf("len = %d\n\n", r);
 	// r = printf("u = %u\n", -1);
 	// printf("len = %d\n\n", r);
 	// r = printf("u egal 0 = %u\n", 0);
 	
-	r = ft_printf("\n--------------------------------------------\n NULL %s NULL\n", NULL);
-	ft_printf("len = %d\n\n", r);
+	// r = ft_printf("\n--------------------------------------------\n NULL %s NULL\n", NULL);
+	// ft_printf("len = %d\n\n", r);
 	
-	ft_printf("\n----------------------------- ERROR CONTROL -----------------------------\n\n");
-	ft_printf("%%\n");
+	// ft_printf("\n----------------------------- ERROR CONTROL -----------------------------\n\n");
+	// ft_printf("%%\n");
 
 	// r = ft_printf("%x\n", UINT_MAX);
 	// ft_printf("len = %d\n\n", r);

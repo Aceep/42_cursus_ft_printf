@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:47:44 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/12/02 15:00:39 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:34:12 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,14 @@
 int	ft_lstnw(const char *str, t_arg **text)
 {
 	int	arg_len;
- 
+
 	arg_len = 0;
 	*text = (t_arg *)malloc(sizeof(t_arg));
 	if (!(text))
 		return (0);
-	arg_len += read_arg_width(str, text); 
+	arg_len += read_arg_width(str, text);
 	if (*(str + arg_len) == '.')
 		arg_len += read_arg_prec((str + arg_len + 1), text) + 1;
-	// printf("%ld = prec in lstnw \n", (*text)->precision);
-	//
 	return (arg_len);
 }
 

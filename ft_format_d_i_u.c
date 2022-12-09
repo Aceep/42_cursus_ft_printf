@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 19:15:50 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/12/02 15:02:14 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:34:27 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@ int	put_nbr(int n, t_arg **text)
 	char	*s;
 
 	s = ft_itoa(n);
-	//printf("%ld = prec \n", (*text)->precision);
-	//if (text)
-	//	put_am(text, ft_strlen(s));
 	ft_putstr(s);
 	if ((*text)->width != 0)
 		return (free(s), (*text)->width);

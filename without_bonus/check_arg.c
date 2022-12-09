@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 12:53:45 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/12/08 19:19:25 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/12/09 16:59:25 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int	check_arg(size_t *wr, va_list arg_info, const char *str)
 	else if (*str == 'p')
 		*wr += put_ptr((void *)va_arg(arg_info, void *));
 	else if (*str == 'x' || *str == 'X')
-		*wr += put_hexa((unsigned long long int)va_arg(arg_info, unsigned long long int), *str);
+		*wr += put_hexa((unsigned int)va_arg(arg_info, unsigned int), *str);
 	return (0);
 }

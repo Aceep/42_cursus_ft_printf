@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/09 17:30:41 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/12/09 17:31:44 by alycgaut         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 size_t	ft_len(long long add, char *base)
@@ -35,10 +47,10 @@ char	*ft_itoa_base(long long add, char *base)
 	return (str);
 }
 
-size_t	ft_ulen(unsigned long long add, char *base)
+size_t	ft_ulen(unsigned long long int add, char *base)
 {
-	int			n;
-	unsigned long long	base_len;
+	int				n;
+	unsigned int	base_len;
 
 	base_len = ft_strlen(base);
 	n = 1;
@@ -49,20 +61,15 @@ size_t	ft_ulen(unsigned long long add, char *base)
 	}
 	return (n);
 }
-#include <stdio.h>
-char	*ft_utoa_base(long long add, char *base)
-{
-	char	*str;
-	int		base_len;
-	int		add_len;
-	unsigned long long int	i;
 
-	i = add;
-	if (i <= 0)
-		i = -i;
+char	*ft_utoa_base(unsigned long long int add, char *base)
+{
+	char				*str;
+	int					base_len;
+	unsigned int		add_len;
+
 	base_len = ft_strlen(base);
 	add_len = ft_ulen(add, base);
-	//printf("%llu add \n", add);
 	str = ft_calloc((add_len + 1), sizeof(char));
 	if (!str)
 		return (NULL);

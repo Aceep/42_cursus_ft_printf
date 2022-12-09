@@ -6,11 +6,12 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 19:06:53 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/12/02 14:56:29 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:35:06 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 int	read_arg_width(const char *str, t_arg **text)
 {
 	int		i;
@@ -29,7 +30,7 @@ int	read_arg_width(const char *str, t_arg **text)
 
 int	read_arg_prec(const char *str, t_arg **text)
 {
-	int	i;
+	int		i;
 	char	*precision;
 	int		prec;
 
@@ -39,7 +40,6 @@ int	read_arg_prec(const char *str, t_arg **text)
 	precision = ft_substr(str, 0, i);
 	prec = ft_atoi(precision);
 	(*text)->precision = prec;
-	// printf("%ld = prec \n", (*text)->precision);
 	return (free(precision), i);
 }
 /*

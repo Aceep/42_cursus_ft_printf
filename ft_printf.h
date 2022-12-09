@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 17:17:33 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/12/02 14:51:41 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:35:26 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		put_ptr(void *ptr_add, t_arg **text);
 int		put_uns(unsigned int n, t_arg **text);
 int		put_hexa(int hex, char c, t_arg **text);
 /*struct*/
-int	read_arg_prec(const char *str, t_arg **text);
+int		read_arg_prec(const char *str, t_arg **text);
 int		read_arg_width(const char *str, t_arg **text);
 int		ft_lstnw(const char *str, t_arg **text);
 /*use struct*/

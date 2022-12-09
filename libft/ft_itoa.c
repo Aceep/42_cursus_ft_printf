@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:43:13 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/12/08 17:52:21 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:20:32 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ char	*ft_itoa(int n)
 	return (nbr);
 }
 
-
 void	ft_nbu(int size, char *nbr, unsigned long long int i)
 {
 	nbr[size] = '\0';
@@ -71,9 +70,9 @@ void	ft_nbu(int size, char *nbr, unsigned long long int i)
 
 char	*ft_utoa(long long n)
 {
-	char			*nbr;
+	char					*nbr;
 	unsigned long long int	i;
-	size_t			size;
+	size_t					size;
 
 	i = n;
 	if (i <= 0)

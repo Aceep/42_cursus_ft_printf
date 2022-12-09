@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 13:19:05 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/12/08 19:16:58 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:16:24 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	put_ptr(void *ptr_add)
 {
-	int				i;
-	long long		add;
-	char			*s;
+	int						i;
+	unsigned long long		add;
+	char					*s;
 
 	add = (unsigned long long) ptr_add;
 	if (add == 0)
