@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 17:17:33 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/12/09 16:59:37 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/12/09 19:03:00 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
-# include "../libft/libft.h"
-
+# include <sys/stat.h>
+# include <fcntl.h>
 # include <stdio.h>
+# include "../libft/libft.h"
+# include "../get_next_line/get_next_line_bonus.h"
 
 int		ft_printf(const char *str, ...);
 int		check_arg(size_t *w, va_list arg_info, const char *str);

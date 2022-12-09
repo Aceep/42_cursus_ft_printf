@@ -6,7 +6,7 @@
 #    By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/19 17:07:50 by alycgaut          #+#    #+#              #
-#    Updated: 2022/12/02 17:22:24 by alycgaut         ###   ########.fr        #
+#    Updated: 2022/12/09 18:58:31 by alycgaut         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ OBJS = $(SRCS:.c=.o)
 HEADER = ft_printf.h \
 
 LIBFT_PATH = ../libft
+GNL_PATH = ../get_next_line
 
 NAME = libftprintf.a
 
@@ -35,6 +36,8 @@ RM = rm -rf
 $(NAME) : $(OBJS)
 	make -C $(LIBFT_PATH) bonus
 	cp $(LIBFT_PATH)/libft.a ./$(NAME)
+	make -C $(GNL_PATH) all
+	cp $(GNL_PATH)/gnl.a ./$(NAME)
 	ar rcs $(NAME) $(OBJS)
 
 all : $(NAME)

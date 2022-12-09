@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:50:13 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/12/09 17:10:59 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/12/09 18:58:14 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	main(void)
 	// ft_printf("len = %d\n\n", r);
 	// r = ft_printf("long max hexa =  %x\n", LONG_MAX);
 	// ft_printf("len = %d\n\n", r);
-	ft_printf("mix : %x %x %x %x %x %x -42 =%x\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	//ft_printf("mix : %x %x %x %x %x %x -42 =%x\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 	// ft_printf("\n");
 	// ft_printf("mix : -42 hex = %x %d %d %u %d %d %d  -42 =%dT\n", -42, INT_MAX, INT_MIN, ULONG_MAX, 0,4682, 452,  -42);	
 	// ft_printf("LONG_MAX = %x\n\n", LONG_MAX);
@@ -78,10 +78,10 @@ int	main(void)
 	// printf("len = %d\n\n", r);
 	// r = printf("long max hexa =  %lx\n", LONG_MAX);
 	// printf("len = %d\n\n", r);
-	r = printf("mix : %x %x %lx %lx %lx %x -42 =%xT\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	//r = printf("mix : %x %x %lx %lx %lx %x -42 =%xT\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 	// printf("len = %d\n\n", r);
 	// printf("len = %u\n\n", -42);
-	ft_printf("-42 tout seul = %x\n", -42);
+	//ft_printf("-42 tout seul = %x\n", -42);
 	// r = printf("x = %lx\n", LONG_MIN);
 	// printf("len = %d\n\n", r);
 	// r = printf("u = %u\n", -1);
@@ -102,5 +102,10 @@ int	main(void)
 	// ft_printf("len = %d\n\n", r);
 	// printf(" %llx \n", 9223372036854775807LL);
 	// ft_printf("len = %d\n\n", r);
+	int fd = open("test", O_CREAT);
+	char *gnl;
+	ft_printf("Hello");
+	gnl = get_next_line(1);
+	ft_putstr_fd(gnl, fd);
 	return (0);
 }

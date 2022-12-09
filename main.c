@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:50:13 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/12/02 14:59:52 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/12/09 18:44:33 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(void)
 	// ft_printf("len = %d\n\n", r);
 	//r =ft_printf("caracteres : abc%7c%c%c\n", 'd', 'e', 'f');
 	//ft_printf("len = %d\n\n", r);
-	r = ft_printf("flag d : %d\n",-2147483647);
+	// r = ft_printf("flag d : %d\n",-2147483647);
 	// ft_printf("len = %d\n\n", r);
 	// r = ft_printf("string : %15s\n", "HEllo");
 	// ft_printf("len = %d\n\n", r);
