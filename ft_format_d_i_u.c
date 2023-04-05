@@ -6,33 +6,28 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 19:15:50 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/12/09 17:34:27 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/12/08 18:11:08 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	put_nbr(int n, t_arg **text)
+int	put_nbr(int n)
 {
 	char	*s;
+	int		len;
 
 	s = ft_itoa(n);
-	ft_putstr(s);
-	if ((*text)->width != 0)
-		return (free(s), (*text)->width);
-	else
-		return (free(s), ft_nbrlen(n));
+	len = ft_strlen(s);
+	return (ft_putstr(s), free(s), len);
 }
 
-int	put_uns(unsigned int n, t_arg **text)
+int	put_uns(unsigned int n)
 {
 	char	*s;
+	int		len;
 
-	s = ft_itoa(n);
-	if (text)
-		put_am(text, ft_nbrlen(n));
-	if ((*text)->width != 0)
-		return (ft_putstr(s), free(s), (*text)->width);
-	else
-		return (ft_putstr(s), free(s), ft_nbrlen(n));
+	s = ft_utoa(n);
+	len = ft_strlen(s);
+	return (ft_putstr(s), free(s), len);
 }

@@ -6,27 +6,24 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 13:19:05 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/12/01 19:02:17 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/12/09 17:16:24 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	put_ptr(void *ptr_add, t_arg **text)
+int	put_ptr(void *ptr_add)
 {
-	int				i;
-	long long		add;
-	char			*s;
+	int						i;
+	unsigned long long		add;
+	char					*s;
 
-	add = (long long) ptr_add;
+	add = (unsigned long long) ptr_add;
+	if (add == 0)
+		return (ft_putstr("(nil)"), 5);
 	ft_putstr("0x");
 	i = 2;
-	s = ft_itoa_base(add, "0123456789abcdef");
+	s = ft_utoa_base(add, "0123456789abcdef");
 	i += ft_strlen(s);
-	if (text)
-		put_am(text, i);
-	if ((*text)->width != 0)
-		return (ft_putstr(s), free(s), (*text)->width);
-	else
-		return (ft_putstr(s), free(s), i);
+	return (ft_putstr(s), free(s), i);
 }
